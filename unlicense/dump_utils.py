@@ -222,7 +222,9 @@ def interpreter_can_dump_pe(pe_file_path: str) -> bool:
     current_platform = platform.machine()
     binary = lief.parse(pe_file_path)
     pe_architecture = binary.header.machine
-
+    return True
+    
+def unused() -> bool:
     # 64-bit OS on x86
     if current_platform == "AMD64":
         bitness = struct.calcsize("P") * 8
